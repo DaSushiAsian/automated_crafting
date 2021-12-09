@@ -1,5 +1,6 @@
 # Automated Crafting
 An open-source plugin for Bukkit which adds autocrafters capable of automatically crafting anything.
+This fork only adds the ability to spit out things like glass bottles in to the same container as the produced honey block :)
 
 <br/>
 
