@@ -82,7 +82,7 @@ public class MainCrafterTick extends BukkitRunnable {
                             List<ItemStack> leftovers = recipe.takeMaterials(container.getInventory());
 
                             //Put leftovers back into the inventory, we'll assume it always fits
-                            container.getInventory().addItem(leftovers.toArray(new ItemStack[0]));
+//                            container.getInventory().addItem(leftovers.toArray(new ItemStack[0]));
 
                             //Check if there's a container nearby that wants the output.
                             //This could never trigger if we didn't have enough space in the holder
@@ -92,6 +92,10 @@ public class MainCrafterTick extends BukkitRunnable {
                                 ItemStack i = recipe.getResultDrop();
                                 if (i != null && i.getType() != Material.AIR) {
                                     c.getInventory().addItem(i);
+                                }
+
+                                for (ItemStack leftover : leftovers) {
+                                    c.getInventory().addItem(leftover);
                                 }
                                 break;
                             }
