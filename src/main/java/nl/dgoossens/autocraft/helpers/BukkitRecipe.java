@@ -211,7 +211,9 @@ public class BukkitRecipe implements CraftingRecipe {
 
         // For all block state meta items we clear the block entity tag off the item we use for comparisons
         // so a full shulker box is accepted as craftable
-        if (clone.hasItemMeta() && clone.getItemMeta() instanceof BlockStateMeta meta) {
+        if (clone.hasItemMeta() && clone.getItemMeta() instanceof BlockStateMeta) {
+            BlockStateMeta meta = (BlockStateMeta) clone.getItemMeta();
+
             if (blockEntityTag != null) {
                 try {
                     blockEntityTag.set(meta, null);
